@@ -9,7 +9,13 @@ y_values = [x**2 for x in x_values]
 
 plt.style.use('ggplot')
 fig, ax = plt.subplots()
-ax.scatter(x_values, y_values, s=10)
+
+# 自定义颜色，方法一，形参c
+# ax.scatter(x_values, y_values, c='green', s=10)
+# 自定义颜色，方法二，形参c
+# ax.scatter(x_values, y_values, c=[(0, 0.8, 0)], s=10)
+# 自定义颜色，方法一，形参color
+ax.scatter(x_values, y_values, color=(0, 0.8, 0), s=10)
 
 # 设置图表标题并给坐标轴加上标签
 ax.set_title("平方数", fontsize=24)

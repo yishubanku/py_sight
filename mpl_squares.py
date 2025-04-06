@@ -4,9 +4,11 @@ import matplotlib.pyplot as plt
 # 指定中文字体，否则会出现显示问题
 plt.rcParams['font.sans-serif'] = ['SimHei']
 
+input_values=[1, 2, 3, 4, 5]
 squares = [1, 4, 9, 16, 25]
+
 fig, ax = plt.subplots()
-ax.plot(squares, linewidth=3)
+ax.plot(input_values, squares, linewidth=3)
 
 # 设置图表标题并给坐标轴加上标签
 ax.set_title("平方数", fontsize=24)

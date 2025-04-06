@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 # 指定中文字体，否则会出现显示问题
 plt.rcParams['font.sans-serif'] = ['SimHei']
 
-x_values = [1, 2, 3, 4, 5]
-y_values = [1, 4, 9, 16, 25]
+x_values = range(1, 1001)
+y_values = [x**2 for x in x_values]
 
 plt.style.use('ggplot')
 fig, ax = plt.subplots()
-ax.scatter(x_values, y_values, s=200)
+ax.scatter(x_values, y_values, s=10)
 
 # 设置图表标题并给坐标轴加上标签
 ax.set_title("平方数", fontsize=24)

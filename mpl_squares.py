@@ -7,6 +7,12 @@ plt.rcParams['font.sans-serif'] = ['SimHei']
 input_values=[1, 2, 3, 4, 5]
 squares = [1, 4, 9, 16, 25]
 
+# 查看所有可用样式
+print(plt.style.available)
+
+# 设置样式
+plt.style.use('ggplot')
+
 fig, ax = plt.subplots()
 ax.plot(input_values, squares, linewidth=3)
 

@@ -1,5 +1,6 @@
 import csv
-
+import matplotlib.pyplot as plt
+from datetime import datetime
 
 filename = 'data/sitka_weather_07-2018_simple.csv'
 with open(filename) as f:
@@ -11,9 +12,25 @@ with open(filename) as f:
     #     print(index, column_header)
 
     # 从文件中获取最高温度
-    highs = []
+    dates, highs = [], []
     for row in reader:
+        current_date = datetime.strptime(row[2], '%Y-%m-%d')
         high = int(row[5])
+        dates.append(current_date)
         highs.append(high)
 
-print(highs)
+# 指定中文字体，否则会出现显示问题
+plt.rcParams['font.sans-serif'] = ['SimHei']
+
+# 根据最高温度绘制图形
+plt.style.use('ggplot')
+fig, ax = plt.subplots()
+ax.plot(dates, highs, c='red')
+
+# 设置图形的格式
+ax.set_title("2018年7月每日最高温度", fontsize=24)
+ax.set_xlabel('', fontsize=16)
+ax.set_ylabel('温度 (F)', fontsize=16)
+ax.tick_params(axis='both', which='major', labelsize=16)
+
+plt.show()

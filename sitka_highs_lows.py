@@ -27,8 +27,8 @@ plt.rcParams['font.sans-serif'] = ['SimHei']
 # 根据最高温度绘制图形
 # plt.style.use('ggplot')
 fig, ax = plt.subplots()
-ax.plot(dates, highs, c='red')
-ax.plot(dates, lows, c='blue')
+ax.plot(dates, highs, c='red', alpha=0.5)
+ax.plot(dates, lows, c='blue', alpha=0.5)
 ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
 
 # 设置图形的格式

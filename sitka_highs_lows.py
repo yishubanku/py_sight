@@ -29,6 +29,7 @@ plt.rcParams['font.sans-serif'] = ['SimHei']
 fig, ax = plt.subplots()
 ax.plot(dates, highs, c='red')
 ax.plot(dates, lows, c='blue')
+ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
 
 # 设置图形的格式
 ax.set_title("2018年每日最高和最低温度", fontsize=24)
